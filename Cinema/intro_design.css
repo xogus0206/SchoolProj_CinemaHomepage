@@ -1,0 +1,30 @@
+/* section */
+.section { height: 690px; }
+
+/* section article */
+.section .article_container {
+	position: relative;
+	height: 690px;
+	width: 1280px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.1); }
+.section .article_container #introduction {
+	display: block;
+	width: 1280px;
+	height: 690px; }
+.section .article_container #introduction p {
+	display: inline-block;
+	position: relative;
+	width: 400px;
+	margin-left: 17px;
+	background-color: yellow; }
+.section .article_container #introduction p span.bold{
+	font-size: 1.5em;
+	font-weight: 600; }
+.section .article_container #introduction #box1 {
+	margin-left: 10px;
+	margin-right: 10px; }
+.section .article_container #introduction #box1 img {
+	margin-top: 10px;
+	margin-left: 8px;
+	margin-right: 8px; }
