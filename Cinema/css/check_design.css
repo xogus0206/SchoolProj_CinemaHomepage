@@ -1,0 +1,10 @@
+/* section */
+.section { height: 690px; }
+
+/* section article */
+.section .article_container {
+	position: relative;
+	height: 690px;
+	width: 1280px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.1); }

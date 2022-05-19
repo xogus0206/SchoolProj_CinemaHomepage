@@ -1,0 +1,116 @@
+/* section */
+.section { height: 690px; }
+.section .article_container {
+	position: relative;
+	height: 690px;
+	width: 1280px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.1); }
+
+/* side nav article */
+ul {
+	margin: 0 auto;
+	padding: 0;
+	list-style-type: none; }
+.section .article_container #side_nav {
+	float: left;
+	height: 690px;
+	width: 256px; }
+.section .article_container #side_nav ul {
+	position: relative;
+	top: 50px;
+	padding: 15px 0 0 0;
+	height: 115px;
+	width: 180px;
+	border: 1px solid black;
+	border-radius: 30px; }
+.section .article_container #side_nav ul li{
+	width: 150px;
+	margin: 0 auto;
+	padding: 3px 0px 3px 0px;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 600;
+	border-radius: 15px; }
+.section .article_container #side_nav ul li a:link { color: black; }
+.section .article_container #side_nav ul li a:visited { color: black; }
+
+/* up article */
+.section .article_container #up {
+	float: left;
+	height: 380px;
+	width: 1024px; }
+#up #poster {
+	display: inline-block;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	height: 340px;
+	width: 250px; }
+#up #poster img { border-radius: 15px; }
+#up #trailer {
+	display: inline-block;
+	position: relative;
+	height: 350px;
+	width: 650px;
+	top: 20px;
+	left: 50px; }
+
+
+/* down common tag */
+.bold { font-weight: 600; }
+
+/* down_1 article */
+.section .article_container #down_1 {
+	float: left;
+	height: 310px;
+	width: 286px; }
+#down_1 #info {
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	left: 20px;
+	height: 280px;
+	width: 250px;
+	border: 1px solid black;
+	border-radius: 30px; }
+#down_1 #info #text_1 {
+	position: relative;
+	top: 15px;
+	left: 15px;
+	height: 190px;
+	width: 225px; }
+#down_1 #info #text_1 span{ font-size: 1.1em; }
+#down_1 #info #text_1 #age { color: red; }
+#down_1 #info #reserve {
+	margin-top: 30px; 
+	text-align: center; }
+#down_1 #info #reserve #button {
+	margin: 0px 5px 0px 5px;
+	padding: 6px 10px 6px 10px;
+	border-radius: 50px;
+	background-color: #333;
+	font-weight: 600; ; }
+#down_1 #info #reserve #button:hover { background-color: #111; }
+
+/* down_2 article */
+.section .article_container #down_2 {
+	float: left;
+	height: 310px;
+	width: 738px; }
+#down_2 #story {
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	left: 20px;
+	height: 280px;
+	width: 650px;
+	border: 1px solid black;
+	border-radius: 30px; }
+#down_2 #story #text_2 {
+	position: relative;
+	top: 15px;
+	left: 15px;
+	height: 250px;
+	width: 620px; }
+#down_2 #story #text_2 #first { font-size: 1.1em; font-style: italic; }
