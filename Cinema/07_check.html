@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Check</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/check_design.css">
+	<script type="text/javascript" src="check.js"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="img_container">
+			<a href="01_main.html">
+				<img class="logo_img" src="media/logo.png" alt="극장 로고">
+			</a>
+		</div>
+	</header>
+	<nav class="nav">
+		<div class="menu_container">
+			<ul id="menu">
+				<li><a href="02_intro.html">극장 소개</a></li>
+				<li><a href="03_movies_current.html">상영 영화</a></li>
+				<li><a href="05_reserve.html">영화 예매</a></li>
+				<li id="active"><a href="07_check.html">예매 확인</a></li>
+				<li><a href="06_schedule.html">상영 일정</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="section">
+		<div class="article_container">
+			<div id="reserve_list">
+			</div>
+			<script>
+				window.onload = function(){
+					var listKey = new Array();
+					var inList = document.getElementById('reserve_list');
+					if (window.localStorage['check'] == null) {
+						return alert('예매 내역이 없습니다.');
+					} else {
+						listKey = window.localStorage['check'].split(',');
+						for (var i = 0; i < listKey.length; i++) {
+							var list = new Array();
+							list = window.localStorage[listKey[i]].split(',');
+							var smallList;
+							var listTotal;
+							if (list[0] == '님아') {
+								var listName = i + " : " + list[0] + "," + list[1];
+							} else{
+								var listName = i + " : " + list[0];
+							}
+							smallList = '<br><span onclick="moreInfo('+ listKey[i] +');">'+ listName + '</span>';
+							listTotal += smallList;
+							inList.innerHTML = listTotal.substr(9);
+						}
+					}
+				}
+			</script>
+			<div class="" id="reserve_info">
+				제 목 : <span id="movieName"></span><br>
+				일 시 : <span id="movieTime"></span><br><br>
+				청소년 : <span id="movieTeen"></span><br>
+				성 인 : <span id="movieAdult"></span><br>
+				60세 이상 : <span id="movieElder"></span><br><br>
+				좌석번호 : <span id="movieSeat"></span><br>
+				금 액 : <span id="moviePrice"></span><br>
+				<div id="delete" onclick="deleteList();">
+					내역 삭제
+				</div>
+			</div>
+			<script>
+				function moreInfo(key) {
+					var list = window.localStorage[key].split(',');
+					document.getElementById('reserve_info').className = key;
+					if (list[0] == '님아') {
+							document.getElementById('movieName').innerText = list[0] + "," + list[1];
+							document.getElementById('movieTime').innerText = '5월 ' + list[2] + '일 ' + list[3];
+							document.getElementById('movieTeen').innerText = list[4];
+							document.getElementById('movieAdult').innerText = list[5];
+							document.getElementById('movieElder').innerText = list[6];
+							document.getElementById('moviePrice').innerText = list[7] + '원';
+							var movieSeat = list.splice(9);
+							movieSeat = movieSeat.sort();
+							document.getElementById('movieSeat').innerText = movieSeat;
+						} else{
+							document.getElementById('movieName').innerText = list[0];
+							document.getElementById('movieTime').innerText = '5월 ' + list[1] + '일 ' + list[2];
+							document.getElementById('movieTeen').innerText = list[3];
+							document.getElementById('movieAdult').innerText = list[4];
+							document.getElementById('movieElder').innerText = list[5];
+							document.getElementById('moviePrice').innerText = list[6] + '원';
+							var movieSeat = list.splice(8);
+							movieSeat = movieSeat.sort();
+							document.getElementById('movieSeat').innerText = movieSeat;
+						}
+				}
+
+				function deleteList() {
+					var key = document.getElementById('reserve_info').className;
+					listKey = window.localStorage['check'].split(',');
+					for (var i = 0; i < listKey.length; i++) {
+						if (listKey[i] == key) {
+							listKey.splice(i, 1);
+    						i--;
+						}
+					}
+					var list = window.localStorage[key].split(',');
+					if (list[0]=='님아') {
+						var seat = list.splice(9);
+						var occupied = window.localStorage[list[0] + ',' + list[1] + list[2] + list[8]].split(',');
+						for (var i = 0; i < seat.length; i++){
+							for (var j = 0; j < occupied.length; j++){
+								if (occupied[j]==seat[i]) {
+									occupied.splice(j, 1);
+									j--;
+								}
+							}
+						}
+						if (occupied == '') {
+							window.localStorage.removeItem(list[0] + ',' + list[1] + list[2] + list[8]);
+						} else {
+							window.localStorage[list[0] + ',' + list[1] + list[2] + list[8]] = occupied;
+						}
+					} else {
+						var seat = list.splice(8);
+						var occupied = window.localStorage[list[0] + list[1] + list[7]].split(',');
+						for (var i = 0; i < seat.length; i++){
+							for (var j = 0; j < occupied.length; j++){
+								if (occupied[j]==seat[i]) {
+									occupied.splice(j, 1);
+									j--;
+								}
+							}
+						}
+						if (occupied == '') {
+							window.localStorage.removeItem(list[0] + list[1] + list[7]);
+						} else {
+							window.localStorage[list[0] + list[1] + list[7]] = occupied;
+						}
+					}
+					if (listKey == '') {
+						window.localStorage.removeItem('check');
+					} else {
+						window.localStorage['check'] = listKey;
+					}
+					window.localStorage.removeItem(key);
+					window.location.replace('07_check.html');
+				}
+			</script>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="info_container">
+			<br>
+			<span>경기도 가평군 설악면 실버7로 26</span>
+			<span>TEL: 031-123-4567</span>
+			<span>dbsxogus2331@naver.com</span>
+			<span>대표자명: 윤태현</span><br>
+			<span id="right">Copyright ⓒ 2022 movie homepage by yth0206. All Rights Reserved.</span>
+		</div>
+	</footer>
+</body>
+</html>
