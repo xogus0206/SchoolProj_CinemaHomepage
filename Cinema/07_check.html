@@ -2,10 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Check</title>
+	<title>예매 확인</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/check_design.css">
-	<script type="text/javascript" src="check.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -31,6 +30,7 @@
 			<div id="reserve_list">
 			</div>
 			<script>
+				// 페이지 로드 이후 check에 있는 예매번호들을 이용하여 예매내역 리스트 생성
 				window.onload = function(){
 					var listKey = new Array();
 					var inList = document.getElementById('reserve_list');
@@ -74,9 +74,9 @@
 					if (list[0] == '님아') {
 							document.getElementById('movieName').innerText = list[0] + "," + list[1];
 							document.getElementById('movieTime').innerText = '5월 ' + list[2] + '일 ' + list[3];
-							document.getElementById('movieTeen').innerText = list[4];
-							document.getElementById('movieAdult').innerText = list[5];
-							document.getElementById('movieElder').innerText = list[6];
+							document.getElementById('movieTeen').innerText = list[4] + '명';
+							document.getElementById('movieAdult').innerText = list[5] + '명';
+							document.getElementById('movieElder').innerText = list[6] + '명';
 							document.getElementById('moviePrice').innerText = list[7] + '원';
 							var movieSeat = list.splice(9);
 							movieSeat = movieSeat.sort();
@@ -84,9 +84,9 @@
 						} else{
 							document.getElementById('movieName').innerText = list[0];
 							document.getElementById('movieTime').innerText = '5월 ' + list[1] + '일 ' + list[2];
-							document.getElementById('movieTeen').innerText = list[3];
-							document.getElementById('movieAdult').innerText = list[4];
-							document.getElementById('movieElder').innerText = list[5];
+							document.getElementById('movieTeen').innerText = list[3] + '명';
+							document.getElementById('movieAdult').innerText = list[4] + '명';
+							document.getElementById('movieElder').innerText = list[5] + '명';
 							document.getElementById('moviePrice').innerText = list[6] + '원';
 							var movieSeat = list.splice(8);
 							movieSeat = movieSeat.sort();

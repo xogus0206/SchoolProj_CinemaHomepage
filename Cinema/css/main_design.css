@@ -11,7 +11,7 @@ html, body { margin: 0; }
 	width: 1280px; 
 	height: 235px; 
 	margin: 0 auto; 
-	background: rgba(0, 0, 0, 0.3); }
+	background: rgba(0, 209, 255, 0.6); }
 
 /* nav */
 .nav { 
@@ -52,7 +52,7 @@ html, body { margin: 0; }
 	height: 500px;
 	width: 1280px;
 	margin: 0 auto;
-	background: rgba(0, 0, 0, 0.1); }
+	background: rgba(0, 209, 255, 0.1); }
 .section .article_container #trailer {
 	position: relative;
 	display: inline-block;
@@ -89,7 +89,7 @@ html, body { margin: 0; }
 	height: 190px;
 	width: 1280px;
 	margin: 0 auto;
-	background: rgba(0, 0, 0, 0.1) }
+	background: rgba(0, 209, 255, 0.1); }
 .section .list_container #list {
 	position: relative;
 	left: 95px; }
@@ -121,7 +121,7 @@ html, body { margin: 0; }
 	width: 1280px; 
 	height: 150px; 
 	margin: 0 auto; 
-	background: rgba(0, 0, 0, 0.3); }
+	background: rgba(0, 209, 255, 0.6); }
 .footer .info_container span {
 	display: block;
 	margin-left: 30px;

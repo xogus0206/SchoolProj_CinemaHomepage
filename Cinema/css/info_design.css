@@ -5,7 +5,7 @@
 	height: 690px;
 	width: 1280px;
 	margin: 0 auto;
-	background: rgba(0, 0, 0, 0.1); }
+	background: rgba(0, 209, 255, 0.1); }
 
 /* side nav article */
 ul {
@@ -22,8 +22,8 @@ ul {
 	padding: 15px 0 0 0;
 	height: 115px;
 	width: 180px;
-	background: rgba(0, 0, 0, 0.05);
-	border: 1px solid black;
+	background: rgba(0, 209, 255, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	border-radius: 30px; }
 .section .article_container #side_nav ul li{
 	width: 150px;
@@ -73,8 +73,8 @@ ul {
 	left: 20px;
 	height: 280px;
 	width: 250px;
-	background: rgba(0, 0, 0, 0.05);
-	border: 1px solid black;
+	background: rgba(0, 209, 255, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	border-radius: 30px; }
 #down_1 #info #text_1 {
 	position: relative;
@@ -107,8 +107,8 @@ ul {
 	left: 20px;
 	height: 280px;
 	width: 650px;
-	background: rgba(0, 0, 0, 0.05);
-	border: 1px solid black;
+	background: rgba(0, 209, 255, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	border-radius: 30px; }
 #down_2 #story #text_2 {
 	position: relative;
